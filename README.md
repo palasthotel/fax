@@ -4,7 +4,7 @@ With fax you can improve the way your newsroom works with your extensive network
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+fax is Open-source software licensed under the [MIT license](http://opensource.org/licenses/MIT).
 
 ## Setup locally using Docker
 
@@ -50,7 +50,6 @@ Editor: eddi@example.com:secret
 
 ### Requirements
 - [Node.js Package Manager (npm)](https://www.npmjs.com/get-npm)
-- A PHP Webserver
 
 ### Technologies
 - npm
@@ -68,8 +67,8 @@ To keep dependencies low, we use **npm scripts** for taskrunner purposes. Some o
 
 ### Installation
 - Run `$ npm install`.
-- Inside the `docroot` directory create a `all.css` symlink targeting `all.dev.css` or `all.prod.css`, depending on your environment, e. g.: `$ ln -s all.dev.css all.css`
-- Inside the `docroot` directory create a `bundle.js` symlink targeting `bundle.dev.js` or `bundle.prod.js`, depending on your environment, e. g.: `$ ln -s bundle.dev.js bundle.prod.js`
+- Inside the `public/build` directory create a `all.css` symlink targeting `all.dev.css` or `all.prod.css`, depending on your environment, e. g.: `$ ln -s all.dev.css all.css`
+- Inside the `public/build` directory create a `bundle.js` symlink targeting `bundle.dev.js` or `bundle.prod.js`, depending on your environment, e. g.: `$ ln -s bundle.dev.js bundle.prod.js`
 
 ### Other npm scripts
 There are some other npm scripts, which can make life easier. Some of those are:

@@ -1,0 +1,56 @@
+// @see https://getuikit.com/docs/sass#how-to-build
+
+// 1. Your custom variables and variable overwrites.
+$fax-brand-color: #0089DE;
+$global-primary-background: $fax-brand-color;
+$global-link-color: $fax-brand-color;
+$global-link-hover-color: $fax-brand-color;
+
+// 2. Import default variables and available mixins.
+@import "../../../node_modules/uikit/src/scss/variables-theme.scss";
+@import "../../../node_modules/uikit/src/scss/mixins-theme.scss";
+
+// 3. Your custom mixin overwrites.
+// @mixin hook-card() { color: #000; }
+
+// 4. Import UIkit.
+@import "../../../node_modules/uikit/src/scss/uikit-theme.scss";
+
+
+/** Custom background colors **/
+
+.fx-background-orange {
+  background-color: #E3BE31 !important;
+}
+
+.fx-background-greenish-orange {
+  background-color: #abb33e !important;
+}
+
+.fx-background-orangish-green {
+  background-color: #66bc5e !important;
+}
+
+.fx-background-green {
+  background-color: #32d296 !important;
+}
+
+.fx-background-red {
+  background-color: #f0506e !important;
+}
+
+.fx-white-border {
+  border: 1px solid white !important;
+}
+
+.fx-pre-line {
+  white-space: pre-line;
+}
+
+.fx-stroke-brand * {
+  stroke: $fax-brand-color !important;
+}
+
+.fx-fill-brand * {
+  fill: $fax-brand-color !important;
+}

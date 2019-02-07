@@ -127,7 +127,7 @@ class UpdateUserMutation extends Mutation
         $instagram = filter_var($args['instagram'], FILTER_SANITIZE_STRING);
         $locations = $args['locations'];
         $expertises = $args['expertises'];
-        $expertise = strip_tags($args['expertise']);
+        $expertise = (!empty($args['expertise']))?strip_tags($args['expertise']):false;
 
         $user = UserRepository::getById($id);
         $user->first_name = $first_name;

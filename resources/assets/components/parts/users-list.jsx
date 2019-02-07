@@ -8,15 +8,15 @@ import Pagination from "./pagination";
 import Spinner from "./spinner";
 import UserListItem from "./users-list-item";
 
-const FREELANCERS_QUERY = gql`
-  query getFreelancersQuery(
+const USERS_QUERY = gql`
+  query getUsersQuery(
     $expertises: [Int]
     $locations: [Int]
     $limit: Int
     $offset: Int
     $order: String
   ) {
-    freelancers(
+    users(
       expertises: $expertises
       locations: $locations
       limit: $limit
@@ -40,13 +40,13 @@ const FREELANCERS_QUERY = gql`
         name
       }
     }
-    freelancersCount(expertises: $expertises, locations: $locations)
+    usersCount(expertises: $expertises, locations: $locations)
   }
 `;
 
-const ALL_FREELANCERS_QUERY = gql`
-  query getAllFreelancersQuery {
-    freelancers {
+const ALL_USERS_QUERY = gql`
+  query getAllUsersQuery {
+    users {
       firstName
       lastName
       email
@@ -305,13 +305,13 @@ class UsersList extends React.Component {
 
     try {
       const response = await client.query({
-        query: FREELANCERS_QUERY,
+        query: USERS_QUERY,
         variables: variables
       });
 
       this.setState({
-        users: response.data.freelancers,
-        usersCount: response.data.freelancersCount
+        users: response.data.users,
+        usersCount: response.data.usersCount
       });
     } catch (err) {
       if (err.networkError) {
@@ -327,11 +327,11 @@ class UsersList extends React.Component {
   async getAllUsers() {
     try {
       const response = await client.query({
-        query: ALL_FREELANCERS_QUERY
+        query: ALL_USERS_QUERY
       });
 
       this.setState({
-        usersAll: response.data.freelancers
+        usersAll: response.data.users
       });
     } catch (err) {
       if (err.networkError) {

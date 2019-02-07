@@ -38,7 +38,7 @@ class Message extends React.Component {
             <strong>{message.user.firstName}</strong>
           </header>
         )}
-        <p className="uk-margin-small">{message.text}</p>
+        <p className="uk-margin-small fx-white-space-pre-line">{message.text}</p>
         <footer>
           <p className="uk-margin-remove uk-text-meta">
             <span title={getHumanReadableDateTime(message.created)}>

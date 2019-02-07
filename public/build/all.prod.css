@@ -91,6 +91,7 @@ video {
 audio,
 canvas,
 img,
+svg,
 video {
   max-width: 100%;
   height: auto;
@@ -286,16 +287,6 @@ template {
 }
 iframe {
   border: 0
-}
-a,
-area,
-button,
-input,
-label,
-select,
-summary,
-textarea {
-  touch-action: manipulation
 }
 .var-media-s::before {
   content: "640px"
@@ -508,8 +499,7 @@ a.uk-link-reset:hover {
   height: 1.5em;
   background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%226%22%20height%3D%226%22%20viewBox%3D%220%200%206%206%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22%23666%22%20cx%3D%223%22%20cy%3D%223%22%20r%3D%223%22%20%2F%3E%0A%3C%2Fsvg%3E");
   background-repeat: no-repeat;
-  background-position: 50% 50%;
-  float: left
+  background-position: 50% 50%
 }
 .uk-list-large > li > ul,
 .uk-list-large > li:nth-child(n+2) {
@@ -690,11 +680,9 @@ button.uk-icon:not(:disabled) {
   border: 0;
   padding: 0
 }
-.uk-icon [FILL*='#']:not(.uk-preserve),
 .uk-icon [fill*='#']:not(.uk-preserve) {
   fill: currentcolor
 }
-.uk-icon [STROKE*='#']:not(.uk-preserve),
 .uk-icon [stroke*='#']:not(.uk-preserve) {
   stroke: currentcolor
 }
@@ -929,25 +917,25 @@ button.uk-icon:not(:disabled) {
   color: #999;
   border-color: #e5e5e5
 }
-.uk-input:-ms-input-placeholder {
+.uk-input::-ms-input-placeholder {
   color: #999!important
 }
 .uk-input::-webkit-input-placeholder {
   color: #999
 }
-.uk-input::-ms-input-placeholder {
+.uk-input:-ms-input-placeholder {
   color: #999
 }
 .uk-input::placeholder {
   color: #999
 }
-.uk-textarea:-ms-input-placeholder {
+.uk-textarea::-ms-input-placeholder {
   color: #999!important
 }
 .uk-textarea::-webkit-input-placeholder {
   color: #999
 }
-.uk-textarea::-ms-input-placeholder {
+.uk-textarea:-ms-input-placeholder {
   color: #999
 }
 .uk-textarea::placeholder {
@@ -3042,16 +3030,17 @@ ul.uk-nav-sub {
   color: #333;
   overflow: hidden
 }
-.uk-accordion-title::after {
+.uk-accordion-title::before {
   content: "";
   width: 1.4em;
   height: 1.4em;
+  margin-left: 10px;
   float: right;
   background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2213%22%20height%3D%2213%22%20viewBox%3D%220%200%2013%2013%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22%23666%22%20width%3D%2213%22%20height%3D%221%22%20x%3D%220%22%20y%3D%226%22%20%2F%3E%0A%20%20%20%20%3Crect%20fill%3D%22%23666%22%20width%3D%221%22%20height%3D%2213%22%20x%3D%226%22%20y%3D%220%22%20%2F%3E%0A%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-position: 50% 50%
 }
-.uk-open > .uk-accordion-title::after {
+.uk-open > .uk-accordion-title::before {
   background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2213%22%20height%3D%2213%22%20viewBox%3D%220%200%2013%2013%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22%23666%22%20width%3D%2213%22%20height%3D%221%22%20x%3D%220%22%20y%3D%226%22%20%2F%3E%0A%3C%2Fsvg%3E")
 }
 .uk-accordion-title:focus,
@@ -3758,9 +3747,6 @@ ul.uk-nav-sub {
 .uk-sortable {
   position: relative
 }
-.uk-sortable > * {
-  touch-action: none
-}
 .uk-sortable svg {
   pointer-events: none
 }
@@ -4386,13 +4372,9 @@ ul.uk-nav-sub {
 .uk-child-width-auto > * {
   width: auto
 }
-.uk-child-width-expand > * {
-  width: 1px
-}
 .uk-child-width-expand > :not([class*=uk-width]) {
   flex: 1;
-  min-width: 0;
-  flex-basis: 1px
+  min-width: 1px
 }
 @media (min-width:640px) {
   .uk-child-width-1-1\@s > * {
@@ -4416,13 +4398,9 @@ ul.uk-nav-sub {
   .uk-child-width-auto\@s > * {
     width: auto
   }
-  .uk-child-width-expand\@s > * {
-    width: 1px
-  }
   .uk-child-width-expand\@s > :not([class*=uk-width]) {
     flex: 1;
-    min-width: 0;
-    flex-basis: 1px
+    min-width: 1px
   }
 }
 @media (min-width:960px) {
@@ -4447,13 +4425,9 @@ ul.uk-nav-sub {
   .uk-child-width-auto\@m > * {
     width: auto
   }
-  .uk-child-width-expand\@m > * {
-    width: 1px
-  }
   .uk-child-width-expand\@m > :not([class*=uk-width]) {
     flex: 1;
-    min-width: 0;
-    flex-basis: 1px
+    min-width: 1px
   }
 }
 @media (min-width:1200px) {
@@ -4478,13 +4452,9 @@ ul.uk-nav-sub {
   .uk-child-width-auto\@l > * {
     width: auto
   }
-  .uk-child-width-expand\@l > * {
-    width: 1px
-  }
   .uk-child-width-expand\@l > :not([class*=uk-width]) {
     flex: 1;
-    min-width: 0;
-    flex-basis: 1px
+    min-width: 1px
   }
 }
 @media (min-width:1600px) {
@@ -4509,13 +4479,9 @@ ul.uk-nav-sub {
   .uk-child-width-auto\@xl > * {
     width: auto
   }
-  .uk-child-width-expand\@xl > * {
-    width: 1px
-  }
   .uk-child-width-expand\@xl > :not([class*=uk-width]) {
     flex: 1;
-    min-width: 0;
-    flex-basis: 1px
+    min-width: 1px
   }
 }
 [class*=uk-width] {
@@ -4575,10 +4541,8 @@ ul.uk-nav-sub {
   width: auto
 }
 .uk-width-expand {
-  width: 1px;
   flex: 1;
-  min-width: 0;
-  flex-basis: 1px
+  min-width: 1px
 }
 @media (min-width:640px) {
   .uk-width-1-1\@s {
@@ -4636,10 +4600,8 @@ ul.uk-nav-sub {
     width: auto
   }
   .uk-width-expand\@s {
-    width: 1px;
     flex: 1;
-    min-width: 0;
-    flex-basis: 1px
+    min-width: 1px
   }
 }
 @media (min-width:960px) {
@@ -4698,10 +4660,8 @@ ul.uk-nav-sub {
     width: auto
   }
   .uk-width-expand\@m {
-    width: 1px;
     flex: 1;
-    min-width: 0;
-    flex-basis: 1px
+    min-width: 1px
   }
 }
 @media (min-width:1200px) {
@@ -4760,10 +4720,8 @@ ul.uk-nav-sub {
     width: auto
   }
   .uk-width-expand\@l {
-    width: 1px;
     flex: 1;
-    min-width: 0;
-    flex-basis: 1px
+    min-width: 1px
   }
 }
 @media (min-width:1600px) {
@@ -4822,10 +4780,8 @@ ul.uk-nav-sub {
     width: auto
   }
   .uk-width-expand\@xl {
-    width: 1px;
     flex: 1;
-    min-width: 0;
-    flex-basis: 1px
+    min-width: 1px
   }
 }
 [class*=uk-height] {
@@ -5368,11 +5324,9 @@ iframe.uk-cover {
   }
 }
 .uk-svg,
-.uk-svg:not(.uk-preserve) [FILL*='#']:not(.uk-preserve),
 .uk-svg:not(.uk-preserve) [fill*='#']:not(.uk-preserve) {
   fill: currentcolor
 }
-.uk-svg:not(.uk-preserve) [STROKE*='#']:not(.uk-preserve),
 .uk-svg:not(.uk-preserve) [stroke*='#']:not(.uk-preserve) {
   stroke: currentcolor
 }
@@ -7169,17 +7123,17 @@ iframe.uk-cover {
   color: rgba(255,255,255,.7);
   border-color: rgba(255,255,255,.7)
 }
-.uk-card-primary > :not([class*=uk-card-media]) .uk-input:-ms-input-placeholder,
-.uk-card-primary.uk-card-body .uk-input:-ms-input-placeholder,
-.uk-card-secondary > :not([class*=uk-card-media]) .uk-input:-ms-input-placeholder,
-.uk-card-secondary.uk-card-body .uk-input:-ms-input-placeholder,
-.uk-light .uk-input:-ms-input-placeholder,
-.uk-offcanvas-bar .uk-input:-ms-input-placeholder,
-.uk-overlay-primary .uk-input:-ms-input-placeholder,
-.uk-section-primary:not(.uk-preserve-color) .uk-input:-ms-input-placeholder,
-.uk-section-secondary:not(.uk-preserve-color) .uk-input:-ms-input-placeholder,
-.uk-tile-primary:not(.uk-preserve-color) .uk-input:-ms-input-placeholder,
-.uk-tile-secondary:not(.uk-preserve-color) .uk-input:-ms-input-placeholder {
+.uk-card-primary > :not([class*=uk-card-media]) .uk-input::-ms-input-placeholder,
+.uk-card-primary.uk-card-body .uk-input::-ms-input-placeholder,
+.uk-card-secondary > :not([class*=uk-card-media]) .uk-input::-ms-input-placeholder,
+.uk-card-secondary.uk-card-body .uk-input::-ms-input-placeholder,
+.uk-light .uk-input::-ms-input-placeholder,
+.uk-offcanvas-bar .uk-input::-ms-input-placeholder,
+.uk-overlay-primary .uk-input::-ms-input-placeholder,
+.uk-section-primary:not(.uk-preserve-color) .uk-input::-ms-input-placeholder,
+.uk-section-secondary:not(.uk-preserve-color) .uk-input::-ms-input-placeholder,
+.uk-tile-primary:not(.uk-preserve-color) .uk-input::-ms-input-placeholder,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-input::-ms-input-placeholder {
   color: rgba(255,255,255,.5)!important
 }
 .uk-card-primary > :not([class*=uk-card-media]) .uk-input::-webkit-input-placeholder,
@@ -7195,17 +7149,17 @@ iframe.uk-cover {
 .uk-tile-secondary:not(.uk-preserve-color) .uk-input::-webkit-input-placeholder {
   color: rgba(255,255,255,.5)
 }
-.uk-card-primary > :not([class*=uk-card-media]) .uk-input::-ms-input-placeholder,
-.uk-card-primary.uk-card-body .uk-input::-ms-input-placeholder,
-.uk-card-secondary > :not([class*=uk-card-media]) .uk-input::-ms-input-placeholder,
-.uk-card-secondary.uk-card-body .uk-input::-ms-input-placeholder,
-.uk-light .uk-input::-ms-input-placeholder,
-.uk-offcanvas-bar .uk-input::-ms-input-placeholder,
-.uk-overlay-primary .uk-input::-ms-input-placeholder,
-.uk-section-primary:not(.uk-preserve-color) .uk-input::-ms-input-placeholder,
-.uk-section-secondary:not(.uk-preserve-color) .uk-input::-ms-input-placeholder,
-.uk-tile-primary:not(.uk-preserve-color) .uk-input::-ms-input-placeholder,
-.uk-tile-secondary:not(.uk-preserve-color) .uk-input::-ms-input-placeholder {
+.uk-card-primary > :not([class*=uk-card-media]) .uk-input:-ms-input-placeholder,
+.uk-card-primary.uk-card-body .uk-input:-ms-input-placeholder,
+.uk-card-secondary > :not([class*=uk-card-media]) .uk-input:-ms-input-placeholder,
+.uk-card-secondary.uk-card-body .uk-input:-ms-input-placeholder,
+.uk-light .uk-input:-ms-input-placeholder,
+.uk-offcanvas-bar .uk-input:-ms-input-placeholder,
+.uk-overlay-primary .uk-input:-ms-input-placeholder,
+.uk-section-primary:not(.uk-preserve-color) .uk-input:-ms-input-placeholder,
+.uk-section-secondary:not(.uk-preserve-color) .uk-input:-ms-input-placeholder,
+.uk-tile-primary:not(.uk-preserve-color) .uk-input:-ms-input-placeholder,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-input:-ms-input-placeholder {
   color: rgba(255,255,255,.5)
 }
 .uk-card-primary > :not([class*=uk-card-media]) .uk-input::placeholder,
@@ -7221,17 +7175,17 @@ iframe.uk-cover {
 .uk-tile-secondary:not(.uk-preserve-color) .uk-input::placeholder {
   color: rgba(255,255,255,.5)
 }
-.uk-card-primary > :not([class*=uk-card-media]) .uk-textarea:-ms-input-placeholder,
-.uk-card-primary.uk-card-body .uk-textarea:-ms-input-placeholder,
-.uk-card-secondary > :not([class*=uk-card-media]) .uk-textarea:-ms-input-placeholder,
-.uk-card-secondary.uk-card-body .uk-textarea:-ms-input-placeholder,
-.uk-light .uk-textarea:-ms-input-placeholder,
-.uk-offcanvas-bar .uk-textarea:-ms-input-placeholder,
-.uk-overlay-primary .uk-textarea:-ms-input-placeholder,
-.uk-section-primary:not(.uk-preserve-color) .uk-textarea:-ms-input-placeholder,
-.uk-section-secondary:not(.uk-preserve-color) .uk-textarea:-ms-input-placeholder,
-.uk-tile-primary:not(.uk-preserve-color) .uk-textarea:-ms-input-placeholder,
-.uk-tile-secondary:not(.uk-preserve-color) .uk-textarea:-ms-input-placeholder {
+.uk-card-primary > :not([class*=uk-card-media]) .uk-textarea::-ms-input-placeholder,
+.uk-card-primary.uk-card-body .uk-textarea::-ms-input-placeholder,
+.uk-card-secondary > :not([class*=uk-card-media]) .uk-textarea::-ms-input-placeholder,
+.uk-card-secondary.uk-card-body .uk-textarea::-ms-input-placeholder,
+.uk-light .uk-textarea::-ms-input-placeholder,
+.uk-offcanvas-bar .uk-textarea::-ms-input-placeholder,
+.uk-overlay-primary .uk-textarea::-ms-input-placeholder,
+.uk-section-primary:not(.uk-preserve-color) .uk-textarea::-ms-input-placeholder,
+.uk-section-secondary:not(.uk-preserve-color) .uk-textarea::-ms-input-placeholder,
+.uk-tile-primary:not(.uk-preserve-color) .uk-textarea::-ms-input-placeholder,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-textarea::-ms-input-placeholder {
   color: rgba(255,255,255,.5)!important
 }
 .uk-card-primary > :not([class*=uk-card-media]) .uk-textarea::-webkit-input-placeholder,
@@ -7247,17 +7201,17 @@ iframe.uk-cover {
 .uk-tile-secondary:not(.uk-preserve-color) .uk-textarea::-webkit-input-placeholder {
   color: rgba(255,255,255,.5)
 }
-.uk-card-primary > :not([class*=uk-card-media]) .uk-textarea::-ms-input-placeholder,
-.uk-card-primary.uk-card-body .uk-textarea::-ms-input-placeholder,
-.uk-card-secondary > :not([class*=uk-card-media]) .uk-textarea::-ms-input-placeholder,
-.uk-card-secondary.uk-card-body .uk-textarea::-ms-input-placeholder,
-.uk-light .uk-textarea::-ms-input-placeholder,
-.uk-offcanvas-bar .uk-textarea::-ms-input-placeholder,
-.uk-overlay-primary .uk-textarea::-ms-input-placeholder,
-.uk-section-primary:not(.uk-preserve-color) .uk-textarea::-ms-input-placeholder,
-.uk-section-secondary:not(.uk-preserve-color) .uk-textarea::-ms-input-placeholder,
-.uk-tile-primary:not(.uk-preserve-color) .uk-textarea::-ms-input-placeholder,
-.uk-tile-secondary:not(.uk-preserve-color) .uk-textarea::-ms-input-placeholder {
+.uk-card-primary > :not([class*=uk-card-media]) .uk-textarea:-ms-input-placeholder,
+.uk-card-primary.uk-card-body .uk-textarea:-ms-input-placeholder,
+.uk-card-secondary > :not([class*=uk-card-media]) .uk-textarea:-ms-input-placeholder,
+.uk-card-secondary.uk-card-body .uk-textarea:-ms-input-placeholder,
+.uk-light .uk-textarea:-ms-input-placeholder,
+.uk-offcanvas-bar .uk-textarea:-ms-input-placeholder,
+.uk-overlay-primary .uk-textarea:-ms-input-placeholder,
+.uk-section-primary:not(.uk-preserve-color) .uk-textarea:-ms-input-placeholder,
+.uk-section-secondary:not(.uk-preserve-color) .uk-textarea:-ms-input-placeholder,
+.uk-tile-primary:not(.uk-preserve-color) .uk-textarea:-ms-input-placeholder,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-textarea:-ms-input-placeholder {
   color: rgba(255,255,255,.5)
 }
 .uk-card-primary > :not([class*=uk-card-media]) .uk-textarea::placeholder,
@@ -8988,30 +8942,30 @@ iframe.uk-cover {
   background-color: rgba(255,255,255,.9);
   border-color: transparent
 }
-.uk-card-primary > :not([class*=uk-card-media]) .uk-accordion-title::after,
-.uk-card-primary.uk-card-body .uk-accordion-title::after,
-.uk-card-secondary > :not([class*=uk-card-media]) .uk-accordion-title::after,
-.uk-card-secondary.uk-card-body .uk-accordion-title::after,
-.uk-light .uk-accordion-title::after,
-.uk-offcanvas-bar .uk-accordion-title::after,
-.uk-overlay-primary .uk-accordion-title::after,
-.uk-section-primary:not(.uk-preserve-color) .uk-accordion-title::after,
-.uk-section-secondary:not(.uk-preserve-color) .uk-accordion-title::after,
-.uk-tile-primary:not(.uk-preserve-color) .uk-accordion-title::after,
-.uk-tile-secondary:not(.uk-preserve-color) .uk-accordion-title::after {
+.uk-card-primary > :not([class*=uk-card-media]) .uk-accordion-title::before,
+.uk-card-primary.uk-card-body .uk-accordion-title::before,
+.uk-card-secondary > :not([class*=uk-card-media]) .uk-accordion-title::before,
+.uk-card-secondary.uk-card-body .uk-accordion-title::before,
+.uk-light .uk-accordion-title::before,
+.uk-offcanvas-bar .uk-accordion-title::before,
+.uk-overlay-primary .uk-accordion-title::before,
+.uk-section-primary:not(.uk-preserve-color) .uk-accordion-title::before,
+.uk-section-secondary:not(.uk-preserve-color) .uk-accordion-title::before,
+.uk-tile-primary:not(.uk-preserve-color) .uk-accordion-title::before,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-accordion-title::before {
   background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2213%22%20height%3D%2213%22%20viewBox%3D%220%200%2013%2013%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22rgba(255, 255, 255, 0.7)%22%20width%3D%2213%22%20height%3D%221%22%20x%3D%220%22%20y%3D%226%22%20%2F%3E%0A%20%20%20%20%3Crect%20fill%3D%22rgba(255, 255, 255, 0.7)%22%20width%3D%221%22%20height%3D%2213%22%20x%3D%226%22%20y%3D%220%22%20%2F%3E%0A%3C%2Fsvg%3E")
 }
-.uk-card-primary > :not([class*=uk-card-media]) .uk-open > .uk-accordion-title::after,
-.uk-card-primary.uk-card-body .uk-open > .uk-accordion-title::after,
-.uk-card-secondary > :not([class*=uk-card-media]) .uk-open > .uk-accordion-title::after,
-.uk-card-secondary.uk-card-body .uk-open > .uk-accordion-title::after,
-.uk-light .uk-open > .uk-accordion-title::after,
-.uk-offcanvas-bar .uk-open > .uk-accordion-title::after,
-.uk-overlay-primary .uk-open > .uk-accordion-title::after,
-.uk-section-primary:not(.uk-preserve-color) .uk-open > .uk-accordion-title::after,
-.uk-section-secondary:not(.uk-preserve-color) .uk-open > .uk-accordion-title::after,
-.uk-tile-primary:not(.uk-preserve-color) .uk-open > .uk-accordion-title::after,
-.uk-tile-secondary:not(.uk-preserve-color) .uk-open > .uk-accordion-title::after {
+.uk-card-primary > :not([class*=uk-card-media]) .uk-open > .uk-accordion-title::before,
+.uk-card-primary.uk-card-body .uk-open > .uk-accordion-title::before,
+.uk-card-secondary > :not([class*=uk-card-media]) .uk-open > .uk-accordion-title::before,
+.uk-card-secondary.uk-card-body .uk-open > .uk-accordion-title::before,
+.uk-light .uk-open > .uk-accordion-title::before,
+.uk-offcanvas-bar .uk-open > .uk-accordion-title::before,
+.uk-overlay-primary .uk-open > .uk-accordion-title::before,
+.uk-section-primary:not(.uk-preserve-color) .uk-open > .uk-accordion-title::before,
+.uk-section-secondary:not(.uk-preserve-color) .uk-open > .uk-accordion-title::before,
+.uk-tile-primary:not(.uk-preserve-color) .uk-open > .uk-accordion-title::before,
+.uk-tile-secondary:not(.uk-preserve-color) .uk-open > .uk-accordion-title::before {
   background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2213%22%20height%3D%2213%22%20viewBox%3D%220%200%2013%2013%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22rgba(255, 255, 255, 0.7)%22%20width%3D%2213%22%20height%3D%221%22%20x%3D%220%22%20y%3D%226%22%20%2F%3E%0A%3C%2Fsvg%3E")
 }
 .uk-card-primary > :not([class*=uk-card-media]) .uk-iconnav > * > a,
@@ -9261,4 +9215,7 @@ iframe.uk-cover {
 }
 .fx-fill-brand * {
   fill: #0089de!important
+}
+.fx-white-space-pre-line {
+  white-space: pre-line
 }

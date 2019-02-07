@@ -97,15 +97,6 @@ class LayoutAuthenticated extends React.Component {
                             </Link>
                           </li>
                           <li>
-                            <Link to="/me">
-                              <span
-                                className="uk-margin-small-right"
-                                uk-icon="icon: cog"
-                              />{" "}
-                              Settings
-                            </Link>
-                          </li>
-                          <li>
                             <Link to="/logout">
                               <span
                                 className="uk-margin-small-right"
